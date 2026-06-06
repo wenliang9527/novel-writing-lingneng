@@ -58,7 +58,7 @@ def scan_volume(vol_name, min_words):
 
 def main():
     parser = argparse.ArgumentParser(description='统计小说正文字数')
-    parser.add_argument('--volume', '-v', help='指定卷名（如 "第四卷 异界之潮"），不指定则统计所有卷')
+    parser.add_argument('--volume', '-v', help='指定卷名（如 "第一卷 觉醒时代"），不指定则统计所有卷')
     parser.add_argument('--chapter', '-c', type=int, help='指定章号（需同时指定 --volume）')
     parser.add_argument('--min-words', '-m', type=int, default=3000, help='字数警告线（默认 3000）')
     args = parser.parse_args()

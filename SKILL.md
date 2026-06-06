@@ -1,6 +1,6 @@
 ---
 name: novel-writing-lingneng
-description: 通用小说写作指南。适用于长篇小说创作，涵盖叙事视角、节奏控制、结构变化、对白写作、AI痕迹检测等核心技能。原为灵能科幻修仙小说项目定制，规则已通用化。
+description: 通用小说写作指南。适用于任何长篇小说创作，涵盖叙事视角、节奏控制、结构变化、对白写作、AI痕迹检测等核心技能。
 ---
 
 # 通用小说写作指南
@@ -113,15 +113,12 @@ description: 通用小说写作指南。适用于长篇小说创作，涵盖叙�
 
 可用字数统计脚本快速检查（脚本自动查找正文目录，可在项目根目录或 skill 目录下运行）：
 ```bash
-# 从项目根目录（0001/）运行：
-python .opencode\skills\novel-writing-lingneng\scripts\count_words.py
-
-# 从 skill 目录直接运行：
+# 从 skill 目录运行：
 python scripts\count_words.py
 
-# 指定卷/章：
-python scripts\count_words.py --volume "第四卷 异界之潮"
-python scripts\count_words.py --volume "第四卷 异界之潮" --chapter 1
+# 指定卷/章（按实际项目中的卷名）：
+python scripts\count_words.py --volume "第一卷 觉醒时代"
+python scripts\count_words.py --volume "第一卷 觉醒时代" --chapter 1
 
 # 自定义警告线：
 python scripts\count_words.py --min-words 2500

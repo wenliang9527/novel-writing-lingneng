@@ -116,9 +116,9 @@ description: 通用小说写作指南。适用于任何长篇小说创作，涵�
 # 从 skill 目录运行：
 python scripts\count_words.py
 
-# 指定卷/章（按实际项目中的卷名）：
-python scripts\count_words.py --volume "第一卷 觉醒时代"
-python scripts\count_words.py --volume "第一卷 觉醒时代" --chapter 1
+# 指定卷/章（按实际项目中的卷名和章号）：
+python scripts\count_words.py --volume "第一卷 卷名"
+python scripts\count_words.py --volume "第一卷 卷名" --chapter 1
 
 # 自定义警告线：
 python scripts\count_words.py --min-words 2500

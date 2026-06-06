@@ -14,8 +14,20 @@
 
 import os, re, sys, argparse
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..'))
-TEXT_DIR = os.path.join(PROJECT_ROOT, '正文')
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+TEXT_DIR = None
+for candidate in [
+    os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '0001', '正文')),
+    os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..', '..', '正文')),
+]:
+    if os.path.isdir(candidate):
+        TEXT_DIR = candidate
+        break
+
+if TEXT_DIR is None:
+    print('错误：找不到正文目录', file=sys.stderr)
+    sys.exit(1)
 
 def strip_punctuation(text):
     return re.sub(r'[\u3000-\u303f\uff00-\uffef\uff0c\u3001\u3002\uff1f\uff01\uff1b\uff1a\u201c\u201d\u2018\u2019\uff08\uff09\u3010\u3011\u300a\u300b\u2014\u2026\u00b7\uff0d\,\!\.\?\;\:"\(\)\[\]\{\}\-\#\*\n\r\t \u3000]', '', text).replace('#', '')

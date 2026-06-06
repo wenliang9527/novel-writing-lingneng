@@ -111,11 +111,20 @@ description: 通用小说写作指南。适用于长篇小说创作，涵盖叙�
 
 字数计算标准：**汉字+字母+数字**，不包含任何标点符号和空白。
 
-可用字数统计脚本快速检查（与 skill 同目录）：
+可用字数统计脚本快速检查（脚本自动查找正文目录，可在项目根目录或 skill 目录下运行）：
 ```bash
-python .opencode\skills\novel-writing-lingneng\scripts\count_words.py             # 统计全部
-python .opencode\skills\novel-writing-lingneng\scripts\count_words.py --volume "第四卷 异界之潮"  # 指定卷
-python .opencode\skills\novel-writing-lingneng\scripts\count_words.py --volume "第四卷 异界之潮" --chapter 1  # 指定章
+# 从项目根目录（0001/）运行：
+python .opencode\skills\novel-writing-lingneng\scripts\count_words.py
+
+# 从 skill 目录直接运行：
+python scripts\count_words.py
+
+# 指定卷/章：
+python scripts\count_words.py --volume "第四卷 异界之潮"
+python scripts\count_words.py --volume "第四卷 异界之潮" --chapter 1
+
+# 自定义警告线：
+python scripts\count_words.py --min-words 2500
 ```
 
 ### 每章节数

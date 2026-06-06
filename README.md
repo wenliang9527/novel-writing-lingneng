@@ -21,9 +21,10 @@ skill novel-writing-lingneng
 字数统计：
 
 ```bash
-python scripts/count_words.py                          # 全部
-python scripts/count_words.py --volume "第四卷 异界之潮" # 指定卷
-python scripts/count_words.py --min-words 2500          # 自定义警告线
+python scripts/count_words.py                              # 全部
+python scripts/count_words.py --volume "第一卷 卷名"       # 指定卷
+python scripts/count_words.py --volume "第一卷 卷名" --chapter 1  # 指定章
+python scripts/count_words.py --min-words 2500              # 自定义警告线
 ```
 
 ## 文件结构
@@ -36,6 +37,6 @@ novel-writing-lingneng/
 └── README.md
 ```
 
-## 与项目的关联
+## 集成方式
 
-本仓库通过目录链接（junction）与项目内的技能路径同步，修改任意一侧文件即同步更新。
+将本仓库克隆或复制到项目下的 `.opencode/skills/novel-writing-lingneng/` 目录，加载 skill 后即可在写作时调用。
